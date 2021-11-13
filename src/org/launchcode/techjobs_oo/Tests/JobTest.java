@@ -13,6 +13,8 @@ public class JobTest {
     Job job3;
     Job job4;
     Job job5;
+    Job job = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+
 
     @Before
     public void createJobObjects() {
@@ -39,13 +41,27 @@ public class JobTest {
     public void testJobsForEquality() {
         job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        /*assertEquals(job4.getName(), job5.getName());
+        assertEquals(job4.getName(), job5.getName());
         assertEquals(job4.getEmployer().toString(), job5.getEmployer().toString());
         assertEquals(job4.getLocation().toString(), job5.getLocation().toString());
         assertEquals(job4.getPositionType().toString(), job5.getPositionType().toString());
         assertEquals(job4.getCoreCompetency().toString(), job5.getCoreCompetency().toString());
-        assertNotEquals(job4.getId(), job5.getId());*/
+        assertNotEquals(job4.getId(), job5.getId());
+    }
 
+    @Test
+    public void testToString(Job job) {
+        //job = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+
+        String output = job.toString();
+        assertEquals("OOPS !This job does not seem to exist.", output);
+    }
+
+    @Test
+    public void addMessage()
+    {
+        Job job7 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        //assertTrue(job7.toString().contains("“OOPS! This job does not seem to exist.”"));
 
     }
 

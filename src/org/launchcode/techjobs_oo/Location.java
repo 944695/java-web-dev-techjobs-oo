@@ -2,12 +2,16 @@ package org.launchcode.techjobs_oo;
 
 import java.util.Objects;
 
-public class Location {
+public class Location extends JobField {
     private int id;
     private static int nextId = 1;
     private String value;
 
-    public Location() {
+    public Location(String value) {
+        super(value);
+    }
+
+    /*public Location() {
         id = nextId;
         nextId++;
     }
@@ -17,10 +21,10 @@ public class Location {
     public Location(String value) {
         this();
         this.value = value;
-    }
+    }*/
 
     // Custom toString, equals, and hashCode methods:
-
+   /*
     @Override
     public String toString() {
         return value;
@@ -51,5 +55,5 @@ public class Location {
 
     public void setValue(String value) {
         this.value = value;
-    }
+    }*/
 }
